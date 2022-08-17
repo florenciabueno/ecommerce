@@ -1,9 +1,20 @@
 //array donde se cargarán los datos recibidos:
-let autosArray = [];
+let productos= [];
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
+
+
 function showCategoriesList(array){
     let htmlContentToAppend = "";
+
+    let htmlContentToAppend1 = ''
+
+    htmlContentToAppend1 += `
+                                <h2>  Productos </h2>
+                                <h3> `+ 'Verás aquí todos los productos de la categoría' + ' ' + productos.catName +` </h3>
+                            
+                            ` 
+    document.getElementById("titulo").innerHTML = htmlContentToAppend1; 
 
     for(let i = 0; i < array.products.length; i++){ 
         let autos = array.products[i];
@@ -45,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             autosArray = resultObj.data;
-            showCategoriesList(autosArray);
+            showCategoriesList(productos);
         }
     });
 });

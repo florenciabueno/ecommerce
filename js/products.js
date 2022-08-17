@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            autosArray = resultObj.data;
+            productos = resultObj.data;
             showCategoriesList(productos);
         }
     });

@@ -14,15 +14,63 @@
       background-color: rgb(248, 249, 250);
     }
   </style>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="357181644361-bvi5687hg2lmn3uauohdrs0vgp42igbk.apps.googleusercontent.com">
+
 </head>
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <section class="h-100">
+      <div class="container">
+        <div class="row justify-content-md-center h-100">
+          <div class="card-wrapper">
+
+            <div class="loginimg">  <img src="img\login.png" alt="logo"> </div>
+
+            <h4 class="text-center">Inicio de sesión</h4>
+
+              <div class="text-center">
+                
+                <form>
+
+                  <div class="form-group">
+
+                    <label for="email"> <p class="text-center"> Email </p> </label>
+
+                      <input type="text" class="form-control " id="email" placeholder="Email">
+                     
+                      <div id="validationServerEmail" class="invalid-feedback">
+                        Por favor complete el campo.
+                      </div>
+                    
+                  </div>
+  
+                  <div class="form-group mt-2">
+
+                    <label for="password">  <p class="text-center"> Contraseña </p> </label>
+
+                    <input id="password" type="password" class="form-control" placeholder="Contraseña">
+
+                    <div id="validationServerPassword" class="invalid-feedback">
+                      Por favor complete el campo.
+                    </div>
+                      
+                  </div>
+
+                  <div class="g-signin2 btn m-0 mt-3" data-onsuccess="onSignIn"></div>
+
+                  <div class="form-group m-0 mt-3" >
+                    <button class="btn btn-primary" type="button" id="regBtn" onclick="check()"> Ingresar </button>
+                  </div>
+
+                </form>
+              </div>   
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -34,6 +82,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+
   <script src="js/login.js"></script>
 </body>
 

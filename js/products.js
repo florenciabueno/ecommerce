@@ -3,8 +3,8 @@ let productos= [];
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 
+function showProductsList(array){
 
-function showCategoriesList(array){
     let htmlContentToAppend = "";
 
     let htmlContentToAppend1 = ''
@@ -17,7 +17,9 @@ function showCategoriesList(array){
     document.getElementById("titulo").innerHTML = htmlContentToAppend1; 
 
     for(let i = 0; i < array.products.length; i++){ 
+        
         let autos = array.products[i];
+
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">
@@ -37,7 +39,7 @@ function showCategoriesList(array){
             </div>
         </div>
         `
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend; 
+        document.getElementById("products-list-container").innerHTML = htmlContentToAppend; 
     }
 }
 
@@ -46,8 +48,8 @@ function showCategoriesList(array){
 EJECUCIÓN:
 
 -Al cargar la página se llama a getJSONData() pasándole por parámetro la dirección para obtener el listado.
--Se verifica el estado del objeto que devuelve, y, si es correcto, se cargan los datos en categoriesArray.
--Por último, se llama a showCategoriesList() pasándole por parámetro categoriesArray.
+-Se verifica el estado del objeto que devuelve, y, si es correcto, se cargan los datos en el arreglo.
+-Por último, se llama a showCategoriesList() pasándole por parámetro el arreglo de productos.
 
 */
 
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             productos = resultObj.data;
-            showCategoriesList(productos);
+            showProductsList(productos);
         }
     });
 });

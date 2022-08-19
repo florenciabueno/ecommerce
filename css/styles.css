@@ -188,3 +188,26 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.form-control{
+
+  width: 30%;
+  margin: auto;
+}
+
+.loginimg {
+
+  text-align: center;
+}
+.loginimg img {
+
+  width: 30%;
+
+}
+
+.btn  {
+
+  padding-top: 70m;
+  width: 5%%;
+
+}
